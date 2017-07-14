@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.provider.DocumentsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     ImageView imageView;
     ListView listView;
+    List<Movie> movieModelsList;
 
 
     @Override
@@ -32,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.name);
         listView = (ListView) findViewById(R.id.listView);
-
-
         new doIt().execute();
 
     }
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         protected List<Movie> doInBackground(String... params) {
 
-            List<Movie> movieModelsList = new ArrayList<>();
+            movieModelsList = new ArrayList<>();
             String urls[] = new String[255];
             double rating[] = new double[255];
             try {

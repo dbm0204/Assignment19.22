@@ -1,5 +1,7 @@
 package com.example.dbm0204.assignment192;
 
+import java.util.HashMap;
+
 /**
  * Created by dbm0204 on 7/12/17.
  * The fields for Movie
@@ -47,4 +49,6 @@ public class Movie {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
 }
+
